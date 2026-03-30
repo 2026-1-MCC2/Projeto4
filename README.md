@@ -14,11 +14,11 @@ Vide tutoriais do PI.
 
 ## Nome do Grupo
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Emilly Oliveira dos Santos</a>, <a href="https://www.linkedin.com/in/victorbarq/">Lucas de Freitas Soares</a>, <a href="https://www.linkedin.com/in/victorbarq/">Michael Condori Mamani</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Costa Marques</a>
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Cristina Machado Correa Leite</a>, <a href="https://www.linkedin.com/in/victorbarq/">David De Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/victorbarq/">Jesus De Lisboa Gomes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Katia Milani Lara Bossi</a>
 
-## Descrição
+## Descrição(em progresso)
 
 <p align="center">
 <img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
@@ -28,7 +28,7 @@ Vide tutoriais do PI.
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
+transformar a mr.nuts na maior empresa b2b no ramo cerealista
 <br><br>
 May the force be with you!
 <br><br>
