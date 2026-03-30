@@ -51,12 +51,58 @@ Vide tutoriais do PI.
 
 
 <b>Dados do .env</b>
-
+<p>
 PORT=3000
+</p>
+<p>
 MYSQL_HOST=localhost
+</p>
+<p>
 MYSQL_USER=root
+</p>
+<p>
 MYSQL_PASSWORD=
+</p>
+<p>
 MYSQL_DB=ServidorPI
+</p>
+
+<b>Rotas</b>
+<p>
+http://localhost:3000/mrhealth
+</p>
+<p>
+http://localhost:3000/api/adm
+</p>
+<p>
+http://localhost:3000/api/adm/:ra
+</p>
+<p>
+http://localhost:3000/api/fornecedor
+</p>
+<p>
+http://localhost:3000/api/fornecedor/:idf
+</p>
+<p>
+http://localhost:3000/api/cliente
+</p>
+<p>
+http://localhost:3000/api/cliente/:idc
+</p>
+
+<b>Detalhamento do projeto</b>:
+<p>
+Emilly Oliveira dos Santos participou da elaboração indicando os requisitos de cada entidade do banco de dados, por exemplo, no administrador terá ra, nome, email etc;
+</p>
+<p>
+Lucas de Freitas Soares participou da elaboração principal do código, incrementando as informações necessárias e as atualizações;
+</p>
+<p>
+Michael Condori Mamani participou da organização do código, fazendo a separação dos tipos e gerenciando os códigos;
+</p>
+<p>
+Pedro Costa Marques participou da correção de bugs e testes dos códigos e do banco de dados.
+</p>
 
 <b>documentos</b>: Toda a documentação estará nesta pasta.
 
