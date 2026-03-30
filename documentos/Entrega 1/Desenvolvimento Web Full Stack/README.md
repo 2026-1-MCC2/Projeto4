@@ -14,7 +14,7 @@ Vide tutoriais do PI.
 
 ## 404: Crunch Code
 
-## Integrantes: <a href="https://www.linkedin.com/in/emilly-oliveira-860ba32b4/">Emilly Oliviera dos Santos</a>, <a href="https://www.linkedin.com/in/lucas-soares-a6b677364/">Lucas de Freitas Soares</a>, <a href="https://www.linkedin.com/in/victorbarq/">Michael Condori Manani</a>, <a href="https://www.linkedin.com/in/pedro-costa-marques-395b103b0/">Pedro Costa Marques</a>
+## Integrantes: <a href="https://www.linkedin.com/in/emilly-oliveira-860ba32b4/">Emilly Oliviera dos Santos</a>, <a href="https://www.linkedin.com/in/lucas-soares-a6b677364/">Lucas de Freitas Soares</a>, <a href="https://www.linkedin.com/in/michael-condori-mamani-a35b8739a/">Michael Condori Mamani</a>, <a href="https://www.linkedin.com/in/pedro-costa-marques-395b103b0/">Pedro Costa Marques</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco de Souza Escobar</a>
 
@@ -36,10 +36,11 @@ Vide tutoriais do PI.
 |<br>
 - 📂 Documentos
   - 📂 Entrega1
-    - 📂 Calculo_-_II
     - 📂 Desenvolvimento Web Full Stack
-    - 📂 Gestão Empresarial_e_Dinâmicas_das_Organizações
-    - 📂 Projetos em Banco de Dados
+      - 📂 FullStack - PI
+      - 📄 Full Stack(PI).postman_collection
+      - 📄 PI.sql
+      - 🗎  Teste do banco de dados no postman
 
 - 📂 Src
   - 📂 Entrega1
