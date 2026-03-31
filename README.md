@@ -17,7 +17,7 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/2026-1-MCC2/Projeto4/refs/heads/main/imagens/404%20Crunch%20Code.jpeg" alt="404: Crunch Code" border="0">
   imagem by <a href="https://gemini.google.com/">Gemini</a></p>
-
+  
 
 Somos o grupo "404: Crunch Code" apresentando um Projeto Interdisciplinar promovido pela FECAP, composto por alunos do curso de Ciência da Computação, com parceria da empresa Mr. Nuts para a produção de um site com um mercado B2B voltados para anúncios de produtos relacionados ao ramo alimentício.
 O projeto "Mr. Nuts Cerealista" busca trabalhar a conexão entre fornecedores do mercado B2B através de um site focado na criação de anúncios e ofertas de alimentos, facilitando a transação de negócios ao proporcionar personalização, diversidade de produtos para certa categoria e suporte.
