@@ -85,9 +85,12 @@ Projeto2/
 Nosso banco de dados conta com três tabelas principais, sendo elas: adm, fornecedor e cliente, servindo para definir qual será o tipo de usuário durante a utilização do marketplace. Cada uma possui ligação direta com sua função, na qual o administrador poderá se ligar a hub de anúnicos para gerencia-lá, o fornecedor para publicar novos podutos e o cliente para adquri-los. 
 
 ## Acesso ao DER do banco de dados
-
+<p>  
 file:///C:/Users/PICHAU/Downloads/DER%20PI%20-%20Tabela.pdf
+  </p>
+  <p> 
 file:///C:/Users/PICHAU/Downloads/DER%20PI.pdf
+</p>
 
 ## Detalhamento do Projeto
 
