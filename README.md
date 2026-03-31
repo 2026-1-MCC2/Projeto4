@@ -12,10 +12,10 @@
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/cristina-machado-corr%C3%AAa-leite-630309160/">Dr. Cristina Machado Correa Leite</a>, <a href="https://www.linkedin.com/in/dolemes/">David De Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/jesuslisboagomes/">Jesus De Lisboa Gomes</a>, <a href="https://www.linkedin.com/in/katia-bossi/">Katia Milani Lara Bossi</a>
 
-## Descrição(em progresso)
+## Descrição
 
 <p align="center">
-<img src="blob:https://web.whatsapp.com/23a6ede0-b564-47fe-8fec-f41e73370463" alt="404: Crunch Code" border="0">
+<img src="https://raw.githubusercontent.com/2026-1-MCC2/Projeto4/refs/heads/main/imagens/404%20Crunch%20Code.jpeg" alt="404: Crunch Code" border="0">
   imagem by <a href="https://gemini.google.com/">Gemini</a></p>
 
 
@@ -46,23 +46,18 @@ Projeto2/
 ├── 📂 Backend/
 │   ├── 📂 src/
 │   │   ├── 📂 controllers/
-│   │   │   ├── 📄 imageController.js    # CRUD de imagens no banco
-│   │   │   └── 📄 userController.js     # CRUD de usuários no banco
-│   │   ├── 📄 app.js                    # Prepara as ferramentas e middlewares
-│   │   ├── 📄 db.js                     # Conexão com o banco de dados
-│   │   ├── 📄 routes.js                 # Recebem os pedidos do usuário
-│   │   ├── 📄 server.js                 # Inicia o app
-│   │   └── 📄 uploadConfig.js           # Salva arquivos antes de registrar no banco
+│   │   │   └── 📄 admController.js         # CRUD de administradores no banco
+│   │   │   └── 📄 fornecedorController.js  # CRUD de forecedores no banco
+│   │   │   └── 📄 clienteController.js     # CRUD de clientes no banco
+│   │   ├── 📄 app.js                       # Prepara as ferramentas e middlewares
+│   │   ├── 📄 db.js                        # Conexão com o banco de dados
+│   │   ├── 📄 routes.js                    # Recebem as rotas(links) do marketplace
+│   │   ├── 📄 server.js                    # Inicia o app
+│   │   └── 📄 uploadConfig.js              # Salva arquivos antes de registrar no banco
 │   ├── 📄 package.json
 │   └── 📄 package-lock.json
 │
 ├── 📂 Frontend/
-│   ├── 📂 Assets/                       # Imagens do projeto
-│   ├── 📄 favoritos.html                # Exibe e gerencia favoritos no navegador
-│   ├── 📄 index.html                    # Exibe produtos, busca, ordena e controla favoritos
-│   ├── 📄 produto.html                  # Exibe produto e adiciona/remove dos favoritos
-│   ├── 📄 script.js                     # Simula login e valida usuário
-│   └── 📄 style.css                     # Define estilo visual da página
 │
 ├── 📄 .gitignore
 ├── 📄 package-lock.json
@@ -73,11 +68,10 @@ Projeto2/
 
 - **`documentos/`**: Documentação do projeto, organizada por entregas e disciplinas
 - **`Backend/`**: Código-fonte da API REST (Node.js + Express)
--  **`Backend/src/controllers/`**: Controladores responsáveis pelo CRUD de usuários e imagens
-- **`Backend/src/routes.js/`**: Rotas que recebem e direcionam os pedidos do usuário
+-  **`Backend/src/controllers/`**: Controladores responsáveis pelo CRUD dos tipos de usuários
+- **`Backend/src/routes.js/`**: Rotas que recebem e direcionam o caminho traçado pelo usuário
 - **`Backend/src/uploadConfig.js/`**: Configuração de upload de arquivos antes do registro no banco
 -  **`Frontend/`**: Interface do usuário em HTML, CSS e JavaScript
-- **`Frontend/Assets/`**: Imagens e recursos visuais do projeto
 
 ### 📝 Descrição das Pastas:
 
@@ -115,7 +109,7 @@ O projeto foi realizado de forma com que enaltecesse todos e ajudasse a se desen
 
 ```
 
-2. Crie o banco de dados no MySQL executando o script:
+2. Crie o banco de dados no MySQL utiliando o nome "ServidorPI" executando o script:
 
 ```sh
 
@@ -128,23 +122,29 @@ cd Backend
 npm install
 ```
 
-4. Crie o arquivo `.env` baseado no `.env.example`:
+4. Crie o arquivo `.env`:
 
 ```sh
-cp .env.example .env
+cp .env
 ```
 
 5. Edite o `.env` com suas credenciais do MySQL:
 
 ```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=sua_senha_aqui
-DB_DATABASE=techfood
-DB_PORT=3306
+PORT=3000
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=
+MYSQL_DB=ServidorPI
 ```
 
-6. Inicie o servidor:
+6. Inicie o banco de dados:
+
+```sh
+npm run db
+```
+
+7. Inicie o servidor:
 
 ```sh
 npm run dev
@@ -152,39 +152,67 @@ npm run dev
 
 O servidor estará rodando em `http://localhost:3000`.
 
-## � Rotas da API
+## � Rota Geral (Verificar se o servidor está funionando)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| `POST` | `/usuarios` | Criar um novo usuário |
-| `GET` | `/usuarios` | Listar todos os usuários |
-| `GET` | `/usuarios/:id` | Buscar usuário por ID |
-| `PUT` | `/usuarios/:id` | Atualizar usuário por ID |
-| `DELETE` | `/usuarios/:id` | Deletar usuário por ID |
+| `GET` | `http://localhost:3000/mrhealth` | Verifica a integridade do servidor |
 
-### Exemplo de Body (POST/PUT):
+## � Rotas da API (Administrador)
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/adm` | Criar um novo Administrador |
+| `GET` | `/adm` | Listar todos os Administrador |
+| `GET` | `/adm/:ra` | Buscar Administrador por ID |
+| `PUT` | `/adm/:ra` | Atualizar Administrador por ID |
+| `DELETE` | `/adm/:ra` | Deletar Administrador por ID |
+
+## � Rotas da API (Fornecedor)
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/fornecedor` | Criar um novo Fornecedor |
+| `GET` | `/fornecedor` | Listar todos os Fornecedor |
+| `GET` | `/fornecedor/:idf` | Buscar Fornecedor por ID |
+| `PUT` | `/fornecedor/:idf` | Atualizar Fornecedor por ID |
+| `DELETE` | `/fornecedor/:idf` | Deletar Fornecedor por ID |
+
+## � Rotas da API (Cliente)
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/cliente` | Criar um novo Cliente |
+| `GET` | `/cliente` | Listar todos os Cliente |
+| `GET` | `/cliente/:idc` | Buscar Cliente por ID |
+| `PUT` | `/cliente/:idc` | Atualizar Cliente por ID |
+| `DELETE` | `/cliente/:idc` | Deletar Cliente por ID |
+
+
+### Exemplo de Body para cadastro de Cliente (POST/PUT):
 
 ```json
 {
-  "tipoUsuario": 1,
-  "nomeUsuario": "João Silva",
-  "email": "joao@email.com",
-  "senha": "123456",
-  "contato": "11999999999"
+    "name": "Raimundo da Silva",
+    "email": "raimundo.silva@admin.mrnutscom",
+    "telefone": "1158895400",
+    "senha": "15879632"
 }
 ```
 
 ## 🗄 Banco de Dados
 
-O banco **techfood** possui as seguintes tabelas:
+O banco **ServidorPI** possui as seguintes tabelas:
+- **`adm`** — identifica os administradores do marketplace (ra: pk, name, email, telefone, senha, created_at)
+- **`fornecedor`** — Identifica os fornecedores de produtos (idf: pk, name, cnpj, email, senha, created_at)
+- **`cliente`** — identifica os compradores dos produtos (idc: pk, name, email, telefone, senha, created_at)
+- **`Hub de postagem de anuncios`** — Trata da ela em que os fornecedores publicam seus produtos (IdAnuncio: PK, Titulo, Categoria, Descricao, ativo, created_at, idf: FK)
+- **`Hub de viualização de anuncios`** — Trata da ela em que os fornecedores publicam seus produtos (IdAnuncio: PK, Titulo, Categoria, Descricao, ativo, created_at, idc: FK)
+- **`Gerenciamento`** — Hub dos administradores para gerenciar os anúncios públicados (PK: FK, IdAnuncio: PK: FK)
+- **`Produto`** — Produtos publicados no marketplace (IdProduto: PK, Tipo, Preço, idHub de postagem de anúncios: FK, idHub de visualização de anúncios: FK, idSite fornecedor: FK)
+- **`Avaliação`** — Sisema de nota de satisfação com o produto (Nota, IdProduto: PK: FK, idc: PK: FK)
+- **`Site fornecedor`** — Site que o consumidor é redirecionado ao buscar adquirir o produto (Nome, Link: PK, Informacoes)
 
-- **`usuario`** — Dados base de todos os usuários
-- **`administrador`** — Extensão para admins
-- **`comprador`** — Extensão para compradores (CPF, CEP)
-- **`fornecedor`** — Extensão para fornecedores (CNPJ, nome fantasia)
-- **`categoriaProduto`** — Categorias dos produtos
-- **`anuncio`** — Anúncios de produtos dos fornecedores
-- **`avaliacao`** — Avaliações dos compradores sobre anúncios
 
 ---
 ## 📋 Licença/License
@@ -192,4 +220,8 @@ O banco **techfood** possui as seguintes tabelas:
 <p xmlns:cc="http://creativecommons.org/ns#" >Este trabalho está licenciado sob <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">CC BY 4.0</a></p>
 
 ## 🎓 Referências
-1. 
+1. <https://github.com/iuricode/readme-template>
+2. <https://github.com/gabrieldejesus/readme-model>
+3. <https://chooser-beta.creativecommons.org/>
+4. <https://freesound.org/>
+5. <https://www.toptal.com/developers/gitignore>
