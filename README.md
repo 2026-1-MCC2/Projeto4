@@ -82,7 +82,7 @@ Projeto2/
 
 ## Informações sobre o MySQL
 
-Nosso banco de dados conta com uma tabela principal que é a tabela de **usuários**, as tabelas de **administradores, fornecedores e clientes** tem conexão direta com a tabela usuário, servindo para definir qual será o tipo de usuário na tabela. Além disso tem as tabelas **anuncio e categoriaProduto**, fazem ligação direta com a tabela **fornecedor**, elas servem para guardar os anúncios feitos pelos fornecedores com todos os dados de cada um. Nosso banco também conta om uma tabela avaliação que será responsável por armazenar as notas que os clientes dão aos produtos dos anúncios. 
+Nosso banco de dados conta com três tabelas principais, sendo elas: adm, fornecedor e cliente, servindo para definir qual será o tipo de usuário durante a utilização do marketplace. Cada uma possui ligação direta com sua função, na qual o administrador poderá se ligar a hub de anúnicos para gerencia-lá, o fornecedor para publicar novos podutos e o cliente para adquri-los. 
 
 ## Detalhamento do Projeto
 
