@@ -21,8 +21,8 @@ Vide tutoriais do PI.
 ## Descrição
 
 <p align="center">
-<img src="file:///C:/Users/25028169/Downloads/Logo.png" alt="Mr.Nuts Cerealista" border="0">
-</p>
+<img src="https://raw.githubusercontent.com/2026-1-MCC2/Projeto4/refs/heads/main/imagens/404%20Crunch%20Code.jpeg" alt="404: Crunch Code" border="0">
+  imagem by <a href="https://gemini.google.com/">Gemini</a></p>
 
 
   A Mr. Nuts Cerealista atua no mercado B2B como intermediária entre clientes, produtos e fornecedores, conectando empresas de forma direta e eficiente. A plataforma disponibiliza um site de anúncios que facilita a comunicação e negociação entre as partes, promovendo um ambiente mais ágil e prático tanto para quem deseja vender quanto para quem busca adquirir produtos.
@@ -48,69 +48,74 @@ Vide tutoriais do PI.
     - 📂 Front_end
 |readme.md<br>
 
+## Informações sobre o MySQL
 
+Nosso banco de dados conta com três tabelas principais, sendo elas: adm, fornecedor e cliente, servindo para definir qual será o tipo de usuário durante a utilização do marketplace. Cada uma possui ligação direta com sua função, na qual o administrador poderá se ligar a hub de anúnicos para gerencia-lá, o fornecedor para publicar novos podutos e o cliente para adquri-los. 
 
-<b>Dados do .env</b>
-<p>
+## � Dados do .env:
+
+```
 PORT=3000
-</p>
-<p>
 MYSQL_HOST=localhost
-</p>
-<p>
 MYSQL_USER=root
-</p>
-<p>
 MYSQL_PASSWORD=
-</p>
-<p>
 MYSQL_DB=ServidorPI
-</p>
+```
 
-<b>Rotas</b>
-<p>
-http://localhost:3000/mrhealth
-</p>
-<p>
-http://localhost:3000/api/adm
-</p>
-<p>
-http://localhost:3000/api/adm/:ra
-</p>
-<p>
-http://localhost:3000/api/fornecedor
-</p>
-<p>
-http://localhost:3000/api/fornecedor/:idf
-</p>
-<p>
-http://localhost:3000/api/cliente
-</p>
-<p>
-http://localhost:3000/api/cliente/:idc
-</p>
+## � Rota Geral (Verificar se o servidor está funionando)
 
-<b>Detalhamento do projeto</b>:
-<p>
-Emilly Oliveira dos Santos participou da elaboração indicando os requisitos de cada entidade do banco de dados, por exemplo, no administrador terá ra, nome, email etc;
-</p>
-<p>
-Lucas de Freitas Soares participou da elaboração principal do código, incrementando as informações necessárias e as atualizações;
-</p>
-<p>
-Michael Condori Mamani participou da organização do código, fazendo a separação dos tipos e gerenciando os códigos;
-</p>
-<p>
-Pedro Costa Marques participou da correção de bugs e testes dos códigos e do banco de dados.
-</p>
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `GET` | `http://localhost:3000/mrhealth` | Verifica a integridade do servidor |
 
-<b>documentos</b>: Toda a documentação estará nesta pasta.
+## � Rotas da API (Administrador)
 
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/adm` | Criar um novo Administrador |
+| `GET` | `/adm` | Listar todos os Administrador |
+| `GET` | `/adm/:ra` | Buscar Administrador por ID |
+| `PUT` | `/adm/:ra` | Atualizar Administrador por ID |
+| `DELETE` | `/adm/:ra` | Deletar Administrador por ID |
 
-<b>imagens</b>: Imagens do sistema
+## � Rotas da API (Fornecedor)
 
-<b>src</b>: Pasta que contém o código fonte.
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/fornecedor` | Criar um novo Fornecedor |
+| `GET` | `/fornecedor` | Listar todos os Fornecedor |
+| `GET` | `/fornecedor/:idf` | Buscar Fornecedor por ID |
+| `PUT` | `/fornecedor/:idf` | Atualizar Fornecedor por ID |
+| `DELETE` | `/fornecedor/:idf` | Deletar Fornecedor por ID |
+
+## � Rotas da API (Cliente)
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/cliente` | Criar um novo Cliente |
+| `GET` | `/cliente` | Listar todos os Cliente |
+| `GET` | `/cliente/:idc` | Buscar Cliente por ID |
+| `PUT` | `/cliente/:idc` | Atualizar Cliente por ID |
+| `DELETE` | `/cliente/:idc` | Deletar Cliente por ID |
+
+
+### Exemplo de Body para cadastro de Cliente (POST/PUT):
+
+```json
+{
+    "name": "Raimundo da Silva",
+    "email": "raimundo.silva@admin.mrnutscom",
+    "telefone": "1158895400",
+    "senha": "15879632"
+}
+```
+
+## 🗄 Banco de Dados
+
+O banco **ServidorPI** possui as seguintes tabelas:
+- **`adm`** — identifica os administradores do marketplace (ra: pk, name, email, telefone, senha, created_at)
+- **`fornecedor`** — Identifica os fornecedores de produtos (idf: pk, name, cnpj, email, senha, created_at)
+- **`cliente`** — identifica os compradores dos produtos (idc: pk, name, email, telefone, senha, created_at)
 
 
 ## 📋 Licença/License
