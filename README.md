@@ -84,6 +84,16 @@ Projeto2/
 
 Nosso banco de dados conta com três tabelas principais, sendo elas: adm, fornecedor e cliente, servindo para definir qual será o tipo de usuário durante a utilização do marketplace. Cada uma possui ligação direta com sua função, na qual o administrador poderá se ligar a hub de anúnicos para gerencia-lá, o fornecedor para publicar novos podutos e o cliente para adquri-los. 
 
+## Acesso a primeira entrega do Banco de Dados
+<p>  
+https://github.com/2026-1-MCC2/Projeto4/blob/main/documentos/Entrega%201/Projetos%20em%20Banco%20de%20Dados/README.md
+  </p>
+
+  ## Acesso a segunda entrega do Banco de Dados
+<p>  
+Ainda vou colocar
+  </p>
+
 ## Detalhamento do Projeto
 
 O projeto foi realizado de forma com que enaltecesse todos e ajudasse a se desenvolver<br><br>
