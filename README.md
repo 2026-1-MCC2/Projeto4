@@ -27,6 +27,8 @@ O projeto "Mr. Nuts Cerealista" busca trabalhar a conexão entre fornecedores do
 <pre>
 Projeto2/
 ├── 📂 documentos/
+│   ├── 📄Documento - Projeto de Extensão - COM Empresa.pdf
+│   ├── 📄Documento de especificação de requisitos.pdf
 │   ├── 📂 Entrega 1/
 │   │   ├── 📂 Cálculo - II
 │   │   ├── 📂 Desenvolvimento Web Full Stack
@@ -35,29 +37,38 @@ Projeto2/
 │   │   └── 📄 Venha para a FECAP!.txt
 │   │
 │   └── 📂 Entrega 2/
-│       ├── 📂 Disciplina 1
-│       ├── 📂 Disciplina 2
-│       ├── 📂 Disciplina 3
-│       ├── 📂 Disciplina 4
-│       ├── 📄 Documento - Projeto de Extensão
-│       ├── 📄 README.md
+│       ├── 📂 Cálculo - II
+│   │   ├── 📂 Desenvolvimento Web Full Stack
+│   │   ├── 📂 Gestão Empresarial e Dinâmica das Organizações
+│   │   ├── 📂 Projetos em Banco de Dados
 │       └── 📄 Venha para a FECAP!.txt
 │
 ├── 📂 Backend/
 │   ├── 📂 src/
 │   │   ├── 📂 controllers/
-│   │   │   └── 📄 admController.js         # CRUD de administradores no banco
-│   │   │   └── 📄 fornecedorController.js  # CRUD de forecedores no banco
-│   │   │   └── 📄 clienteController.js     # CRUD de clientes no banco
-│   │   ├── 📄 app.js                       # Prepara as ferramentas e middlewares
-│   │   ├── 📄 db.js                        # Conexão com o banco de dados
-│   │   ├── 📄 routes.js                    # Recebem as rotas(links) do marketplace
-│   │   ├── 📄 server.js                    # Inicia o app
-│   │   └── 📄 uploadConfig.js              # Salva arquivos antes de registrar no banco
+│   │   │   └── 📄 admController.js              # CRUD de administradores no banco
+│   │   │   └── 📄 fornecedorController.js       # CRUD de forecedores no banco
+│   │   │   └── 📄 clienteController.js          # CRUD de clientes no banco
+│   │   │   └── 📄 authADMController.js          # Autenticação para login de administradores no banco
+│   │   │   └── 📄 authClienteController.js      # Autenticação para login de clientes no banco
+│   │   │   └── 📄 authFornecedorController.js   # Autenticação para login de forecedores no banco
+│   │   │   └── 📄 ProdutoController.js          # CRUD de produtos no banco
+├── 📂 middlewares/
+│   │   │   └── 📄 authMiddleware.js             # Vincula um token de login para cada início de sessão
+├── 📂 service/
+│   │   │   └── 📄 tokenService.js               # Gera um token de login
+│   │   ├── 📄 app.js                            # Prepara as ferramentas e middlewares
+│   │   ├── 📄 db.js                             # Conexão com o banco de dados
+│   │   ├── 📄 routes.js                         # Recebem as rotas(links) do marketplace
+│   │   ├── 📄 server.js                         # Inicia o app
+│   │   └── 📄 uploadConfig.js                   # Salva arquivos de imagem antes de registrar no banco
+│   ├── 📄 .env
 │   ├── 📄 package.json
 │   └── 📄 package-lock.json
 │
 ├── 📂 Frontend/
+│   ├── 📂 uploads
+│   ├── 📄 index.html
 │
 ├── 📄 .gitignore
 ├── 📄 package-lock.json
@@ -68,7 +79,7 @@ Projeto2/
 
 - **`documentos/`**: Documentação do projeto, organizada por entregas e disciplinas
 - **`Backend/`**: Código-fonte da API REST (Node.js + Express)
--  **`Backend/src/controllers/`**: Controladores responsáveis pelo CRUD dos tipos de usuários
+-  **`Backend/src/controllers/`**: Controladores responsáveis pelo CRUD, cadastro e login dos tipos de usuários
 - **`Backend/src/routes.js/`**: Rotas que recebem e direcionam o caminho traçado pelo usuário
 - **`Backend/src/uploadConfig.js/`**: Configuração de upload de arquivos antes do registro no banco
 -  **`Frontend/`**: Interface do usuário em HTML, CSS e JavaScript
@@ -91,7 +102,7 @@ https://github.com/2026-1-MCC2/Projeto4/blob/main/documentos/Entrega%201/Projeto
 
   ## Acesso a segunda entrega do Banco de Dados
 <p>  
-Ainda vou colocar
+https://github.com/2026-1-MCC2/Projeto4/blob/main/documentos/Entrega%202/Projetos%20em%20Banco%20de%20Dados/README.md
   </p>
 
 ## Detalhamento do Projeto
@@ -162,13 +173,13 @@ npm run dev
 
 O servidor estará rodando em `http://localhost:3000`.
 
-## � Rota Geral (Verificar se o servidor está funionando)
+##   Rota Geral (Verificar se o servidor está funionando)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | `GET` | `http://localhost:3000/mrhealth` | Verifica a integridade do servidor |
 
-## � Rotas da API (Administrador)
+##   Rotas da API (Administrador)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -178,7 +189,7 @@ O servidor estará rodando em `http://localhost:3000`.
 | `PUT` | `/adm/:ra` | Atualizar Administrador por ID |
 | `DELETE` | `/adm/:ra` | Deletar Administrador por ID |
 
-## � Rotas da API (Fornecedor)
+##   Rotas da API (Fornecedor)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -188,7 +199,7 @@ O servidor estará rodando em `http://localhost:3000`.
 | `PUT` | `/fornecedor/:idf` | Atualizar Fornecedor por ID |
 | `DELETE` | `/fornecedor/:idf` | Deletar Fornecedor por ID |
 
-## � Rotas da API (Cliente)
+##   Rotas da API (Cliente)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -209,6 +220,10 @@ O servidor estará rodando em `http://localhost:3000`.
     "senha": "15879632"
 }
 ```
+
+## 🗄 Acesso a interface
+
+Para utilizar a interface visual do MrNuts Cerealista você precisa acessar o link: http://localhost:3000
 
 ## 🗄 Banco de Dados
 
