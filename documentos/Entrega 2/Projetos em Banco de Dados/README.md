@@ -27,6 +27,8 @@ O projeto "Mr. Nuts Cerealista" busca trabalhar a conexão entre fornecedores do
 <pre>
 Projeto2/
 ├── 📂 documentos/
+│   ├── 📄Documento - Projeto de Extensão - COM Empresa.pdf
+│   ├── 📄Documento de especificação de requisitos.pdf
 │   ├── 📂 Entrega 1/
 │   │   ├── 📂 Cálculo - II
 │   │   ├── 📂 Desenvolvimento Web Full Stack
@@ -35,29 +37,38 @@ Projeto2/
 │   │   └── 📄 Venha para a FECAP!.txt
 │   │
 │   └── 📂 Entrega 2/
-│       ├── 📂 Disciplina 1
-│       ├── 📂 Disciplina 2
-│       ├── 📂 Disciplina 3
-│       ├── 📂 Disciplina 4
-│       ├── 📄 Documento - Projeto de Extensão
-│       ├── 📄 README.md
+│       ├── 📂 Cálculo - II
+│   │   ├── 📂 Desenvolvimento Web Full Stack
+│   │   ├── 📂 Gestão Empresarial e Dinâmica das Organizações
+│   │   ├── 📂 Projetos em Banco de Dados
 │       └── 📄 Venha para a FECAP!.txt
 │
 ├── 📂 Backend/
 │   ├── 📂 src/
 │   │   ├── 📂 controllers/
-│   │   │   └── 📄 admController.js         # CRUD de administradores no banco
-│   │   │   └── 📄 fornecedorController.js  # CRUD de forecedores no banco
-│   │   │   └── 📄 clienteController.js     # CRUD de clientes no banco
-│   │   ├── 📄 app.js                       # Prepara as ferramentas e middlewares
-│   │   ├── 📄 db.js                        # Conexão com o banco de dados
-│   │   ├── 📄 routes.js                    # Recebem as rotas(links) do marketplace
-│   │   ├── 📄 server.js                    # Inicia o app
-│   │   └── 📄 uploadConfig.js              # Salva arquivos antes de registrar no banco
+│   │   │   └── 📄 admController.js              # CRUD de administradores no banco
+│   │   │   └── 📄 fornecedorController.js       # CRUD de forecedores no banco
+│   │   │   └── 📄 clienteController.js          # CRUD de clientes no banco
+│   │   │   └── 📄 authADMController.js          # Autenticação para login de administradores no banco
+│   │   │   └── 📄 authClienteController.js      # Autenticação para login de clientes no banco
+│   │   │   └── 📄 authFornecedorController.js   # Autenticação para login de forecedores no banco
+│   │   │   └── 📄 ProdutoController.js          # CRUD de produtos no banco
+├── 📂 middlewares/
+│   │   │   └── 📄 authMiddleware.js             # Vincula um token de login para cada início de sessão
+├── 📂 service/
+│   │   │   └── 📄 tokenService.js               # Gera um token de login
+│   │   ├── 📄 app.js                            # Prepara as ferramentas e middlewares
+│   │   ├── 📄 db.js                             # Conexão com o banco de dados
+│   │   ├── 📄 routes.js                         # Recebem as rotas(links) do marketplace
+│   │   ├── 📄 server.js                         # Inicia o app
+│   │   └── 📄 uploadConfig.js                   # Salva arquivos de imagem antes de registrar no banco
+│   ├── 📄 .env
 │   ├── 📄 package.json
 │   └── 📄 package-lock.json
 │
 ├── 📂 Frontend/
+│   ├── 📂 uploads
+│   ├── 📄 index.html
 │
 ├── 📄 .gitignore
 ├── 📄 package-lock.json
@@ -83,14 +94,6 @@ Projeto2/
 ## Informações sobre o MySQL
 
 Nosso banco de dados conta com três tabelas principais, sendo elas: adm, fornecedor e cliente, servindo para definir qual será o tipo de usuário durante a utilização do marketplace. Cada uma possui ligação direta com sua função, na qual o administrador poderá se ligar a hub de anúnicos para gerencia-lá, o fornecedor para publicar novos podutos e o cliente para adquri-los. 
-
-## Acesso ao DER do banco de dados
-<p>  
-file:///C:/Users/PICHAU/Downloads/DER%20PI%20-%20Tabela.pdf
-  </p>
-  <p> 
-file:///C:/Users/PICHAU/Downloads/DER%20PI.pdf
-</p>
 
 ## Detalhamento do Projeto
 
@@ -160,13 +163,13 @@ npm run dev
 
 O servidor estará rodando em `http://localhost:3000`.
 
-## � Rota Geral (Verificar se o servidor está funionando)
+##   Rota Geral (Verificar se o servidor está funionando)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | `GET` | `http://localhost:3000/mrhealth` | Verifica a integridade do servidor |
 
-## � Rotas da API (Administrador)
+##   Rotas da API (Administrador)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -176,7 +179,7 @@ O servidor estará rodando em `http://localhost:3000`.
 | `PUT` | `/adm/:ra` | Atualizar Administrador por ID |
 | `DELETE` | `/adm/:ra` | Deletar Administrador por ID |
 
-## � Rotas da API (Fornecedor)
+##   Rotas da API (Fornecedor)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -186,7 +189,7 @@ O servidor estará rodando em `http://localhost:3000`.
 | `PUT` | `/fornecedor/:idf` | Atualizar Fornecedor por ID |
 | `DELETE` | `/fornecedor/:idf` | Deletar Fornecedor por ID |
 
-## � Rotas da API (Cliente)
+##   Rotas da API (Cliente)
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -217,8 +220,17 @@ O banco **ServidorPI** possui as seguintes tabelas:
 - **`Hub de postagem de anuncios`** — Trata da ela em que os fornecedores publicam seus produtos (IdAnuncio: PK, Titulo, Categoria, Descricao, ativo, created_at, idf: FK)
 - **`Hub de viualização de anuncios`** — Trata da ela em que os fornecedores publicam seus produtos (IdAnuncio: PK, Titulo, Categoria, Descricao, ativo, created_at, idc: FK)
 - **`Gerenciamento`** — Hub dos administradores para gerenciar os anúncios públicados (PK: FK, IdAnuncio: PK: FK)
-- **`Produto`** — Produtos publicados no marketplace (IdProduto: PK, Tipo, Preço, idHub de postagem de anúncios: FK, idHub de visualização de anúncios: FK, idSite fornecedor: FK)
-- **`Avaliação`** — Sisema de nota de satisfação com o produto (Nota, IdProduto: PK: FK, idc: PK: FK)
+- **`Produto`** — Produtos publicados no marketplace ( Cod_produto INT PRIMARY KEY AUTO_INCREMENT, Titulo TEXT NOT NULL, Preco DECIMAL(10, 2) NOT NULL, Descricao TEXT,
+  Categoria ENUM(
+        'nozes', 
+        'castanhas', 
+        'grãos', 
+        'sementes', 
+        'farináceos', 
+        'chips', 
+        'temperos'
+    ) NOT NULL,
+    img VARCHAR(255) NULL, id_fornecedor INT NOT NULL, FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
 - **`Site fornecedor`** — Site que o consumidor é redirecionado ao buscar adquirir o produto (Nome, Link: PK, Informacoes)
 
 
