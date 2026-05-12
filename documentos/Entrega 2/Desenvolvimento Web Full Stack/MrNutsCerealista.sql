@@ -33,14 +33,22 @@ create table cliente(
 
 CREATE TABLE produtos (
     Cod_produto INT PRIMARY KEY AUTO_INCREMENT,
-    Titulo text,
-    Preco DECIMAL(10, 2),
+    Titulo TEXT NOT NULL,
+    Preco DECIMAL(10, 2) NOT NULL,
     Descricao TEXT,
-    Categoria VARCHAR(50),
-    img VARCHAR(255) NULL,                          
-    id_fornecedor INT NOT NULL,                               
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor)
+    Categoria ENUM(
+        'nozes', 
+        'castanhas', 
+        'grãos', 
+        'sementes', 
+        'farináceos', 
+        'chips', 
+        'temperos'
+    ) NOT NULL,
+    img VARCHAR(255) NULL,                               
+    id_fornecedor INT NOT NULL,                                
+    FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor),
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- INSERT INTO adm (name, email, telefone, password) VALUES ("Raimundo da Silva","raimundo.silva@admin.mrnutscom","40028922", "1983");
