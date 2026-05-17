@@ -45,6 +45,7 @@ CREATE TABLE produtos (
         'chips', 
         'temperos'
     ) NOT NULL,
+    Preco DECIMAL(10,2) DEFAULT NULL,
     img_capa VARCHAR(255) NULL,
     img_galeria JSON NULL,
     id_fornecedor INT NOT NULL,                                
